@@ -1,0 +1,27 @@
+/*
+This is a header file, denoted by the .h extension. This contains the
+declarations for the Motor class, that is the outline of the functionality
+which the Motor will implement, but not the actual implementation.
+*/
+
+/*
+This is a header guard, which prevents us from declaring the class more than
+once. The #ifndef directive means that the preprocessor will only parse what
+follows if the following flag is undefined. In this case, the first time the
+file is inluded _MOTOR_H will be undefined, so the preprocessor will include
+the file once. Future attempts to include this file will then find that
+_MOTOR_H is already defined, so will skip defining it.
+*/
+#ifndef _MOTOR_H
+#define _MOTOR_H
+
+class Motor {
+    public:
+        int pin_1, pin_2;
+
+    Motor(int pin1, int pin2);
+    void drive(int speed);
+    void stop();
+};
+
+#endif // _MOTOR_H
